@@ -27,3 +27,7 @@ Route::get('/test2', function () {
 });*/
 
 Route::get('/test2', [App\Http\Controllers\Test2Controller::class, 'show']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
