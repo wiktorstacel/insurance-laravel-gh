@@ -31,3 +31,8 @@ Route::get('/test2', [App\Http\Controllers\Test2Controller::class, 'show']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/main', 'MainController@index');
+Route::post('/main/checklogin', 'MainController@checklogin');
+Route::get('main/successlogin', 'MainController@successlogin');
+Route::get('main/logout', 'MainController@logout');
