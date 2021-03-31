@@ -39,3 +39,5 @@ Route::get('main/logout', 'MainController@logout');
 
 Route::get('tabledit', 'TableditController@index');
 Route::post('tabledit/action', 'TableditController@action')->name('tabledit.action');
+
+Route::resource('student', 'StudentController');
