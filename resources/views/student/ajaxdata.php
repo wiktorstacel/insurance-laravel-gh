@@ -3,6 +3,7 @@
     <head>
         <title>Datatables Server Side Processing in Laravel</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>       
@@ -28,23 +29,25 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#student_table').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": {
-                        "url": '{{ route("ajaxdata.getdata") }}',
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        "type": "POST",
-                        success: function (response) {
+                    processing: true,
+                    serverSide: true,
+                    ajax: {
+                        url: "ajaxdata/getdata",//"{{route('ajaxdata.getdata')}}", //
+                        //contentType: "application/json; charset=utf-8",
+                        //dataType: "json",
+                        /*success: function (response) {
                             console.log("jestem");
-                        },
+                        },*/
                         //"dataType" :"json",
-                        
+                        type:"GET",
+                        /*error: function (error) {
+                        alert(error);
+                        }*/
                         //"contentType": "application/x-www-form-urlencoded; charset=UTF-8",
                     },
-                    "columns": [
-                        {"data": "first_name"},
-                        {"data": "last_name"}
+                    columns: [
+                        {data: "first_name"},
+                        {data: "last_name"}
                     ]
                 });
             });
