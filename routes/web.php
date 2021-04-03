@@ -41,3 +41,6 @@ Route::get('tabledit', 'TableditController@index');
 Route::post('tabledit/action', 'TableditController@action')->name('tabledit.action');
 
 Route::resource('student', 'StudentController');
+
+Route::get('ajaxdata', 'AjaxdataController@index')->name('ajaxdata');
+Route::get('ajaxdata/getdata', 'AjaxdataController@getdata')->name('ajaxdata.getdata');
