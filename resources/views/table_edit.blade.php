@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master')
 
-        <title>Simple Login System in Laravel</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+@section('additional_meta')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>            
     <script src="https://markcell.github.io/jquery-tabledit/assets/js/tabledit.min.js"></script>
-        <!--<script type="text/javascript" src="{{ URL::asset('js/jquery.tabledit.min.js') }}"></script>-->
-        
-        <!-- <script src="/js/jquery.tabledit.min.js" ></script> -->
+@endsection
 
-    </head>
-    <body>
-        <div class="container">
+@section('content')
+
           <br />
           <h3 align="center">Live Table Edit Delete with jQuery Tabledit in Laravel</h3>
           <br />
@@ -50,9 +43,7 @@
               </div>
             </div>
           </div>
-        </div>
-    </body>
-</html>
+
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -82,3 +73,5 @@ $(document).ready(function(){
 
 });  
 </script>
+
+@endsection

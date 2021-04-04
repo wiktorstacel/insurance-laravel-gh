@@ -21,6 +21,7 @@
             <h3 align="center">Datatables Server Side Processing in Laravel</h3>
             <br />
             <div align="right">
+                <a href="/student"><button type="button" class="btn btn-primary btn-sm">Student</button></a>
                 <button type="button" name="add" id="add_data" class="btn btn-success btn-sm">Add</button>
             </div>
             <table id="student_table" class="table table-bordered" style="width:100%">
