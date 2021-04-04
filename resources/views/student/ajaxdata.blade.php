@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>       
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,17 +67,17 @@
             //https://stackoverflow.com/questions/32738763/laravel-csrf-token-mismatch-for-ajax-post-request
             $(document).ready(function () {
                 
-                $.ajaxSetup({
+                /*$.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
-                });
+                });*/
                 
                 $('#student_table').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: {
-                        url: "ajaxdata/getdata",//"{{route('ajaxdata.getdata')}}", //
+                        url: "{{route('ajaxdata.getdata')}}", //"ajaxdata/getdata",//
                         //contentType: "application/json; charset=utf-8",
                         //dataType: "json",
                         /*success: function (response) {
@@ -111,7 +111,7 @@
                         /*headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },*/
-                        url:"ajaxdata/postdata",//"{{ route('ajaxdata.postdata') }}",
+                        url:"{{ route('ajaxdata.postdata') }}",//"ajaxdata/postdata",//
                         method:"POST",
                         data:form_data,
                         /*data: {

@@ -21,7 +21,7 @@ class AjaxdataController extends Controller
         return DataTables::of($students)->make(true);
     }
     
-    function postdata()
+    function postdata(Request $request)
     {
         $validation = Validator::make($request->all(), [
             'first_name'    => 'required',
