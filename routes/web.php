@@ -18,8 +18,16 @@ Route::get('/', function () {
     return view('welcome2');
 });
 
-Route::get('/bootstrap/index', function () {
+Route::get('/template', function () {
     return view('index');
+});
+
+Route::get('/faktury', function () {
+    return view('invoices.index');
+});
+
+Route::get('/faktury/dodaj', function () {
+    return view('invoices.create');
 });
 
 /*Route::get('/test1', function () {
