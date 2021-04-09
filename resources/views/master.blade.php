@@ -38,6 +38,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/ajaxdata">Ajaxdata</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/search">Wyszukaj</a>
+      </li>
     </ul>
   </div>
 </nav>

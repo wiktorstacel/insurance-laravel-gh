@@ -96,5 +96,8 @@
                 </div>
             </div>
         </div>
+        @for($i=0; $i<=5; $i++)
+            <p><br>This is product number {{ $i }}</p>
+        @endfor
     </body>
 </html>

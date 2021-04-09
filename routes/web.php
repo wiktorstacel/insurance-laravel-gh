@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome2');
 });
 
+Route::get('/bootstrap/index', function () {
+    return view('index');
+});
+
 /*Route::get('/test1', function () {
     return 'Test1';
 });
@@ -46,3 +50,5 @@ Route::get('ajaxdata', 'AjaxdataController@index')->name('ajaxdata');
 Route::get('ajaxdata/getdata', 'AjaxdataController@getdata')->name('ajaxdata.getdata');
 
 Route::post('ajaxdata/postdata', 'AjaxdataController@postdata')->name('ajaxdata.postdata');
+
+Route::get('/search', 'SearchController@index');
