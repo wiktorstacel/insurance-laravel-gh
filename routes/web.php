@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Test2Controller;
+use App\Http\Controllers\InvoicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +23,10 @@ Route::get('/template', function () {
     return view('index');
 });
 
-Route::get('/faktury', function () {
-    return view('invoices.index');
-});
+Route::get('/faktury', [InvoicesController::class, 'index']);
 
-Route::get('/faktury/dodaj', function () {
-    return view('invoices.create');
-});
+Route::get('/faktury/dodaj', [InvoicesController::class, 'create']);
+
 
 /*Route::get('/test1', function () {
     return 'Test1';
