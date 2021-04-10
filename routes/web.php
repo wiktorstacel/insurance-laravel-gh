@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Test2Controller;
 use App\Http\Controllers\InvoicesController;
+//use App\Http\Controllers\CustomersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::post('/faktury/zapisz', [InvoicesController::class, 'store'])->name('invo
 Route::put('/faktury/zmien/{id}', [InvoicesController::class, 'update'])->name('invoices.update');
 Route::put('/faktury/zmien/{id}', [InvoicesController::class, 'update'])->name('invoices.update');
 Route::delete('/faktury/usun/{id}', [InvoicesController::class, 'delete'])->name('invoices.delete');
+
+Route::resource('klienci', CustomersController::class, ['names' => 'customers']);
 
 
 /*Route::get('/test1', function () {
