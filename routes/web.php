@@ -23,9 +23,9 @@ Route::get('/template', function () {
     return view('index');
 });
 
-Route::get('/faktury', [InvoicesController::class, 'index']);
+Route::get('/faktury', [InvoicesController::class, 'index'])->name('invoices.index');
 
-Route::get('/faktury/dodaj', [InvoicesController::class, 'create']);
+Route::get('/faktury/dodaj', [InvoicesController::class, 'create'])->name('invoices.create');
 
 
 /*Route::get('/test1', function () {

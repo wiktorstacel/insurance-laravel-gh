@@ -39,7 +39,7 @@
         <a class="nav-link" href="/ajaxdata">Ajaxdata</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/search">Wyszukaj</a>
+        <a class="nav-link" href="/faktury">Faktury</a>
       </li>
     </ul>
   </div>
