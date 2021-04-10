@@ -30,6 +30,7 @@
                     <th scope="col">Numer Faktury</th>
                     <th scope="col">Data</th>
                     <th scope="col">Kwota</th>
+                    <th scope="col">Akcje</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -39,6 +40,13 @@
                         <td>{{ $invoice->number }}</td>
                         <td>{{ $invoice->date }}</td>
                         <td>{{ $invoice->total }}</td>
+                        <td><a href="{{ route('invoices.edit', ['id' => $invoice->id]) }}" class="btn btn-primary">Edytuj</a>
+                        <form method="POST" action="{{ route('invoices.delete', ['id' => $invoice->id]) }}" >
+                            @csrf
+                            @method('delete')
+                            <button type="submit" href="" class="btn btn-danger">Usuń</button>
+                        </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
