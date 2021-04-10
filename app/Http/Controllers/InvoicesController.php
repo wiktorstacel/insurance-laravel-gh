@@ -17,4 +17,18 @@ class InvoicesController extends Controller
     {
         return view('invoices.create');
     }
+    
+    public function store(Request $request)
+    {
+        //dd($request);
+        $invoice = new Invoice();
+        
+        $invoice->number = $request->number;
+        $invoice->date = $request->date;
+        $invoice->total = $request->total;
+        
+        $invoice->save();
+        
+        return redirect()->route('invoices.index')->with('message', 'Faktura dodana poprawnie.');
+    }
 }
