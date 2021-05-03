@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Invoice;
 
@@ -28,6 +29,11 @@ class InvoicesController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        $request->validate([
+            'name'  =>  'required|min:5',
+            'address'   => 'required|max:20',
+            'nip'   =>  'required|digits:10'
+        ]);
         $invoice = new Invoice();
         
         $invoice->number = $request->number;

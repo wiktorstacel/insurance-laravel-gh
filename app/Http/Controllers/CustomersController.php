@@ -36,7 +36,7 @@ class CustomersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {       
         $customer = new Customer();
         
         $customer->name = $request->name;

@@ -12,6 +12,17 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
                 <!-- Contact Section Form-->
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -21,21 +32,21 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Numer faktury</label>
-                                    <input class="form-control" id="number" name="number" type="text" placeholder="Numer faktury" required="required" data-validation-required-message="Wpisz numer faktury." />
+                                    <input class="form-control" id="number" value="{{ old('name') }}" name="number" type="text" placeholder="Numer faktury" data-validation-required-message="Wpisz numer faktury." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Data wystawienia</label>
-                                    <input class="form-control" id="date" name="date" type="text" placeholder="Data wystawienia" required="required" data-validation-required-message="Wprowadź datę." />
+                                    <input class="form-control" id="date" value="{{ old('address') }}" name="date" type="text" placeholder="Data wystawienia" data-validation-required-message="Wprowadź datę." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Kwota</label>
-                                    <input class="form-control" id="total" name="total" type="text" placeholder="Kwota faktury" required="required" data-validation-required-message="Wprowadź kwotę." />
+                                    <input class="form-control" id="total" value="{{ old('nip') }}" name="total" type="text" placeholder="Kwota faktury" data-validation-required-message="Wprowadź kwotę." /><!<!-- required="required"  -->
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
