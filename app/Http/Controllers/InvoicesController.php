@@ -30,9 +30,9 @@ class InvoicesController extends Controller
     {
         //dd($request);
         $request->validate([
-            'name'  =>  'required|min:10',
-            'address'   => 'required|max:30',
-            'nip'   =>  'required|digits:12'
+            'name'  =>  'required|min:14',
+            'address'   => 'required|max:34',
+            'nip'   =>  'required|digits:14'
         ]);
         $invoice = new Invoice();
         
