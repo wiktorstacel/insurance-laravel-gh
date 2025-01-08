@@ -66,7 +66,7 @@ class InvoicesController extends Controller
     
     public function delete($id)
     {
-        Invoice::destroy($id);
+        Invoice::destroy($id);//Usunięcie rekordu z bazy danych
         
         return redirect()->route('invoices.index')->with('message', 'Faktura została usunięta.');
     }
