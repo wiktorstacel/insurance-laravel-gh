@@ -30,6 +30,19 @@
                         <form action="{{ route('invoices.store') }}" method="POST" id="contactForm" name="sentMessage" novalidate="novalidate">
                             {{ csrf_field() }}
                             <div class="control-group">
+                                <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Wybierz klienta</label>
+                                </div>
+                                <select name="customer" class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Wybierz...</option>
+                                    @foreach (\App\Customer::all() as $item)
+                                    <option value="{{ $item->id  }}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Numer faktury</label>
                                     <input class="form-control" id="number" value="{{ old('name') }}" name="number" type="text" placeholder="Numer faktury" data-validation-required-message="Wpisz numer faktury." />

@@ -10,7 +10,7 @@ class InvoicesController extends Controller
 {
     public function index()
     {
-        $invoices = Invoice::all(); //pobiera wszystkie rekordy z tabeli mysql - invoices
+        $invoices = Invoice::with('customer')->get(); //pobiera wszystkie faktury z informacją o kliencie
         return view('invoices.index', ['invoices' => $invoices]); //przekazanie danych z mysql do widoku
     }
     
@@ -40,6 +40,7 @@ class InvoicesController extends Controller
         $invoice->number = $request->number; //$invoice->numbers - nazwa pola taka ja w bazie Mysql
         $invoice->date = $request->date;
         $invoice->total = $request->total;
+        $invoice->customer_id = $request->customer;
         
         $invoice->save(); //Metoda save() jest jedną z metod zdefiniowanych w klasie Model. Służy do zapisywania obiektu (rekordu) do bazy danych.        
         //Eloquent ORM wykorzystuje Active Record – wzorzec projektowy, który mapuje obiekt PHP na tabelę w bazie danych.
