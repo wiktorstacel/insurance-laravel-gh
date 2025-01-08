@@ -21,7 +21,7 @@ class InvoicesController extends Controller
     
     public function edit($id)
     {
-        $invoice = Invoice::find($id);
+        $invoice = Invoice::find($id); //Proste wyszykanie rekordu w bazie po id
         
         return view('invoices.edit', ['invoice' => $invoice]);
     }
@@ -37,7 +37,7 @@ class InvoicesController extends Controller
         $invoice = new Invoice(); //do zmiennej $invoice przypisz nowy "Model Invoice" - tabela invoices i jej pola zdefiniowana w migracjach
         //Klasa Invoice dziedziczy po klasie Model, która jest częścią Eloquent ORM
 
-        $invoice->numbers = $request->number; //$invoice->numbers - nazwa pola taka ja w bazie Mysql
+        $invoice->number = $request->number; //$invoice->numbers - nazwa pola taka ja w bazie Mysql
         $invoice->date = $request->date;
         $invoice->total = $request->total;
         
@@ -53,7 +53,7 @@ class InvoicesController extends Controller
     
     public function update($id, Request $request)
     {
-        $invoice = Invoice::find($id);
+        $invoice = Invoice::find($id);//Wyszykanie rekordu w bazie po id w celu update
         
         $invoice->number = $request->number;
         $invoice->date = $request->date;
