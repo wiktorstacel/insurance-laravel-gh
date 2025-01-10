@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Validator;
+use App\Http\Requests\InvoiceStoreRequest;
 use Illuminate\Http\Request;
 use App\Invoice;
 
@@ -26,14 +26,10 @@ class InvoicesController extends Controller
         return view('invoices.edit', ['invoice' => $invoice]);
     }
     
-    public function store(Request $request)
+    public function store(InvoiceStoreRequest $request)
     {
-        //dd($request);
-        $request->validate([
-            'number'  =>  'required|string|min:3',
-            'date'   => 'required|max:15',
-            'total'   =>  'required|numeric|min:1'
-        ]);
+        //Przeniesienie walidacji do app/Http/Request/InvoiceStoreRequest
+
         $invoice = new Invoice(); //do zmiennej $invoice przypisz nowy "Model Invoice" - tabela invoices i jej pola zdefiniowana w migracjach
         //Klasa Invoice dziedziczy po klasie Model, która jest częścią Eloquent ORM
 

@@ -34,7 +34,7 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Wybierz klienta</label>
                                 </div>
-                                <select name="customer" class="custom-select" id="inputGroupSelect01">
+                                <select name="customer" value="{{ old('customer') }} class="custom-select" id="customer000">
                                     <option selected>Wybierz...</option>
                                     @foreach (\App\Customer::all() as $item)
                                     <option value="{{ $item->id  }}">{{ $item->name }}</option>
@@ -45,21 +45,21 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Numer faktury</label>
-                                    <input class="form-control" id="number" value="{{ old('name') }}" name="number" type="text" placeholder="Numer faktury" data-validation-required-message="Wpisz numer faktury." />
+                                    <input class="form-control" id="number" value="{{ old('number') }}" name="number" type="text" placeholder="Numer faktury" data-validation-required-message="Wpisz numer faktury." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Data wystawienia</label>
-                                    <input class="form-control" id="date" value="{{ old('address') }}" name="date" type="text" placeholder="Data wystawienia" data-validation-required-message="Wprowadź datę." />
+                                    <input class="form-control" id="date" value="{{ old('date') }}" name="date" type="text" placeholder="Data wystawienia" data-validation-required-message="Wprowadź datę." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Kwota</label>
-                                    <input class="form-control" id="total" value="{{ old('nip') }}" name="total" type="text" placeholder="Kwota faktury" data-validation-required-message="Wprowadź kwotę." /><!<!-- required="required"  -->
+                                    <input class="form-control" id="total" value="{{ old('total') }}" name="total" type="text" placeholder="Kwota faktury" data-validation-required-message="Wprowadź kwotę." /><!<!-- required="required"  -->
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
