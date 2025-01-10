@@ -37,6 +37,18 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {       
+        //Laravel.com => The basics => Validation => Available Validation Rules - wszystkie dostępne reguły walidacji
+        $request->validate([
+            'name' => 'required|min:5',//create.blade.php: <input id="name" value="{{ old('name') }}" - old wyciąga wartość z poprzedniej sesji przed submitem
+            'address' => 'required|max:30',
+            'nip' => 'required|digits:10'
+        ]);
+        /*Funkcja $request->validate() w Laravelu zakończy wykonywanie metody store() (lub innej, w której jest wywoływana), 
+        jeśli walidacja wykryje nieprawidłowości.Jeśli dane wejściowe nie spełniają reguł walidacji, Laravel automatycznie:
+        - Przekieruje użytkownika z powrotem na poprzednią stronę.
+        - Dołączy do odpowiedzi komunikaty o błędach walidacji.
+        - Zachowa dane formularza w sesji (tzw. "old input"), dzięki czemu można je ponownie wyświetlić w formularzu.
+        Nie musisz więc samodzielnie przerywać funkcji ani obsługiwać błędów — Laravel robi to za Ciebie.*/
         $customer = new Customer();
         
         $customer->name = $request->name;

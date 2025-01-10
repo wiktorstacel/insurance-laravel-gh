@@ -12,6 +12,17 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <!-- Contact Section Form-->
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -21,21 +32,21 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nazwa klienta</label>
-                                    <input class="form-control" id="name" name="name" type="text" placeholder="Nazwa" required="required" data-validation-required-message="Wpisz numer faktury." />
+                                    <input class="form-control" id="name" value="{{ old('name') }}" name="name" type="text" placeholder="Nazwa" required="required" data-validation-required-message="Wpisz numer faktury." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Adres</label>
-                                    <input class="form-control" id="address" name="address" type="text" placeholder="Adres klienta" required="required" data-validation-required-message="Wprowadź datę." />
+                                    <input class="form-control" id="address" value="{{ old('address') }}" name="address" type="text" placeholder="Adres klienta" required="required" data-validation-required-message="Wprowadź datę." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>NIP</label>
-                                    <input class="form-control" id="nip" name="nip" type="text" placeholder="Numer NIP" required="required" data-validation-required-message="Wprowadź kwotę." />
+                                    <input class="form-control" id="nip" value="{{ old('nip') }}" name="nip" type="text" placeholder="Numer NIP" required="required" data-validation-required-message="Wprowadź kwotę." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
